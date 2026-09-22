@@ -287,17 +287,6 @@ document.addEventListener('DOMContentLoaded', () => {
     heroImage.src = canvas.toDataURL();
   });
 
-  // ===== CONTACT FORM =====
-  const contactForm = document.getElementById('contactForm');
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-
-    const mailtoLink = `mailto:watjakorn.kp@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(`From: ${name}\nEmail: ${email}\n\n${message}`)}`;
-    window.location.href = mailtoLink;
-  });
 
   // ===== SMOOTH SCROLL FOR ALL ANCHOR LINKS =====
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {

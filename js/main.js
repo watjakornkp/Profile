@@ -212,9 +212,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const repos = await response.json();
 
-      // Filter out forked repos and sort by stars then updated
+      // Repos to hide from portfolio
+      const hiddenRepos = ['HR-Project'];
+
+      // Filter out forked repos, hidden repos, and sort by stars then updated
       const filteredRepos = repos
-        .filter((repo) => !repo.fork)
+        .filter((repo) => !repo.fork && !hiddenRepos.includes(repo.name))
         .sort((a, b) => {
           // Sort by stars first, then by updated date
           if (b.stargazers_count !== a.stargazers_count) {
